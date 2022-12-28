@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <app-model [selectedMovie]="selectedMovie"></app-model>
+  <div class="row d-flex justify-content-center ">
+    <div
+      class="col-xl-3 col-md-4 col-sm-6 mb-3"
+      *ngFor="let movie of movies.results"
+    >
+      <div class="card">
+        <div class="position-relative list overflow-hidden">
+          <img
+            src="{{ baseImgUrl + movie.poster_path }}"
+            class="card-img-top w-100"
+            alt="{{ movie.title }}"
+          />
+          <div class="leyer rounded">
+            <h5>{{ movie.title }}</h5>
+            <p>{{ movie.overview.slice(0, 100) }}</p>
+            <p>{{ "vote_average : " + movie.vote_average }}</p>
+            <p>{{ "vote_count : " + movie.vote_count }}</p>
+
+            <p>{{ movie.release_date }}</p>
+          </div>
+        </div>
+        <div class="card-body bg-dark text-center">
+          <h5 class="card-title">{{ movie.title.slice(0, 10) }}</h5>
+          <button (click)="sendMovie(movie)" class="btn btn-light w-100 fs-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Reserv Now</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>{{ errorMag }}</p>
+    </div>
+  </div>
+</div>

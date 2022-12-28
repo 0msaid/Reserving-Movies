@@ -1,0 +1,29 @@
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal  fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-dark text-center" id="exampleModalLabel">Resrev Ticket</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" >
+
+         <p class="text-dark fs-5">{{"Movie Name : "+selectedMovie.title}}</p>
+         <p class="text-dark fs-5">{{"Ticket ID : "+selectedMovie.id}} </p>
+         <p class="text-dark fs-5">{{"Movie vote : "+selectedMovie.vote_count}} </p>
+         <p class="text-dark fs-5">{{"Release Date "+selectedMovie.release_date}} </p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="showWarning()" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="showSuccess()" class="btn btn-outline-success" data-bs-dismiss="modal">confrim</button>
+        </div>
+      </div>
+    </div>
+  </div>
